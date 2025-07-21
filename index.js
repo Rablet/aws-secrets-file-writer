@@ -94,11 +94,11 @@ async function getSecret(secretName, secretVersion = "AWSCURRENT") {
 
         // Write secret to file
         const secretsFolder = `${OUTPUT_FOLDER}/${secretName}`;
-        if (!existsSync(secretsFolder)) {
+        /*if (!existsSync(secretsFolder)) {
           mkdirSync(secretsFolder);
-        }
+        }*/
 
-        writeFileSync(`${secretsFolder}/${secretKey}`, secrets[secretKey]);
+        writeFileSync(`${secretsFolder}_${secretKey}`, secrets[secretKey]);
       }
     }
   } catch (error) {

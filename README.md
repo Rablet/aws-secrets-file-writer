@@ -6,9 +6,9 @@ Reads AWS SecretManager secrets and writes them to files based on the secret key
 
 For example, if `OUTPUT_FOLDER` is set to `/tmp/secrets` and a secret with name `secret-1` has three secrets in it called `CERT`, `KEY`, and `PASSWORD` it will write the following files:
 
-- /tmp/secrets/secret-1/CERT
-- /tmp/secrets/secret-1/KEY
-- /tmp/secrets/secret-1/PASSWORD
+- /tmp/secrets/secret-1_CERT
+- /tmp/secrets/secret-1_KEY
+- /tmp/secrets/secret-1_PASSWORD
 
 ## Configurations:
 

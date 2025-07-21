@@ -1,6 +1,6 @@
 {
   "name": "aws-secrets-file-writer",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "type": "module",
   "description": "Reads AWS SecretManager secrets and writes them to files based on the secret key",
   "main": "index.js",
