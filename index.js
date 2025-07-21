@@ -6,15 +6,35 @@ import {
 } from "@aws-sdk/client-secrets-manager";
 
 const OUTPUT_FOLDER = process.env.OUTPUT_FOLDER;
+
+if (OUTPUT_FOLDER === undefined) {
+  console.error("Missing OUTPUT_FOLDER. Exiting");
+  process.exit(1);
+}
+
 if (!existsSync(OUTPUT_FOLDER)) {
   mkdirSync(OUTPUT_FOLDER);
 }
 
 const AWS_REGION = process.env.AWS_REGION;
-const SECRET_ARN = process.env.SECRETS_NAME_1;
 
 const accessKeyId = process.env.ACCESS_KEY_ID;
 const accessKeySecret = process.env.ACCESS_KEY_SECRET;
+
+if (accessKeyId === undefined) {
+  console.error("Missing accessKeyId. Exiting");
+  process.exit(1);
+}
+
+if (accessKeySecret === undefined) {
+  console.error("Missing accessKeySecret. Exiting");
+  process.exit(1);
+}
+
+if (AWS_REGION === undefined) {
+  console.error("Missing AWS_REGION. Exiting");
+  process.exit(1);
+}
 
 const client = new SecretsManagerClient({
   region: AWS_REGION,
