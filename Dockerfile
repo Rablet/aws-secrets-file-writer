@@ -12,7 +12,8 @@ FROM alpine:${ALPINE_VERSION}
 # Create app directory
 WORKDIR /usr/src/app
 # Add required binaries
-RUN apk add --no-cache libstdc++ dumb-init \
+RUN apk add --no-cache libstdc++ dumb-init
+#\
 #  && addgroup -g 1000 node && adduser -u 1000 -G node -s /bin/sh -D node \
 #  && chown node:node ./
 COPY --from=builder /usr/local/bin/node /usr/local/bin/
