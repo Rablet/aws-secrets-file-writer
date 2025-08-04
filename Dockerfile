@@ -1,6 +1,6 @@
-ARG ALPINE_VERSION=3.16
+ARG ALPINE_VERSION=3.22
 
-FROM node:18-alpine${ALPINE_VERSION} AS builder
+FROM node:22-alpine${ALPINE_VERSION} AS builder
 WORKDIR /build-stage
 COPY package*.json ./
 RUN npm ci
